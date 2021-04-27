@@ -22,8 +22,8 @@ defmodule Www.Room do
   # TODO: Add is active round check, guard?
   # TODO: Maybe receive max player count from configuration, rather than @attribute?
 
-  @spec join(Room.t, Player.t) :: {:ok, Room.t}
-  def join(%Room{} = room, %Player{} = player) do
+  @spec join(t, Player.t) :: {:ok, t}
+  def join(room, player) do
     {:ok, %Room{room | players: [player | room.players]}}
   end
 end

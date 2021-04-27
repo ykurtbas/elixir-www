@@ -15,7 +15,7 @@ defmodule Www.Player do
   when name == "",
    do: {:error, "id or name cannot be empty"}
 
-  @spec new(binary(), binary()) :: {:error, binary()} | {:ok, Player.t}
+  @spec new(binary(), binary()) :: {:error, binary()} | {:ok, t}
   def new(id, name) do
     case String.length(name) < 20 do
       true -> {:ok, %Player{id: id, name: name}}
