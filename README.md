@@ -91,7 +91,7 @@ I want this to be a community effort where people can peer-review each other's c
 
 Elixir Library - https://github.com/ykurtbas/elixir-www
 
-Phoenix UI - https://github.com/ykurtbas/phoenix-www`
+Phoenix UI - https://github.com/ykurtbas/phoenix-www
 
 ### More Questions?
 I didn't take any further design restrictions and decisions.
