@@ -56,20 +56,20 @@ I will slowly expand the following `Rooms, Gathering Hall, and Server` as scenar
 - Should have a string language identifying the language used in the room.
 - Should have a flag of being `private` or `public`
 - Minimum 3 players needed to start a `round` and play the game.
-- Able to know which players are in the room
+- Able to list which players are in the room
 - There is no maximum player limit to a room but should investigate for performance reasons.
-- Can be joined only, if it hasn't reached `maximum user count and no active round is in play`
-- Can initiate a new round by the 'administrator' if there are more than `2 players` in the room.
+- Can be joined only, if it hasn't reached `maximum user count` and `no active round is in play`
+- Can initiate a new round by the `administrator` if there are more than `2 players` in the room.
 - Can be destroyed by the `creator` or `administrator`
 - Can be destroyed only `if there is no active round`
 - Players should be able to `chat` with each other outside of an `active round`
 - Should do `self-cleaning` where possible
 ### Round
-- Can be initiated by 'administrator
+- Can only be initiated by the `administrator`
 - All the players should receive the first question at the `roughly` same time
-- After answering a question, `player` should be presented with the next one.
+- After answering a question, `player` should be presented with the next one, till no questions are available
 - If a player finishes all their questions, they simply wait for `all players` to finish.
-- If the player count has fallen below the `minimum` players at any instance, the round should be abandoned
+- If the player count has fallen below the `minimum players` at any instance, the round should be abandoned
 - Should be able to identify which players have answered the `current/past` questions
 - Should have a `maximum time set` to end the round if it does not end by player interaction.
 - Round finishes when `all the questions are answered by` all the players`
