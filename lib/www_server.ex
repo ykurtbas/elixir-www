@@ -6,16 +6,14 @@ defmodule WwwServer do
 
   # Server
   @impl true
+  @spec init(any) :: {:ok, any}
   def init(hall) do
     {:ok, hall}
   end
 
   @impl true
   def handle_call({:add_room, room}, _from, state) do
-    # temp for inspection, move down for one-line
-    state = state |> Hall.add_room(room)
-    IO.inspect(state)
-    {:reply, :ok, state}
+    {:reply, :ok, state |> Hall.add_room(room)}
   end
 
   # Client
@@ -25,6 +23,11 @@ defmodule WwwServer do
       %Hall{},
       name: @service_name
     )
+  end
+
+  @spec service_name :: :testing
+  def service_name do
+    @service_name
   end
 
   # Api

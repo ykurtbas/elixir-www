@@ -14,9 +14,12 @@ defmodule WwwServerTest do
     {:ok, p2room} = Room.join(p1room, player2)
 
     WwwServer.add_room(p2room)
+    IO.inspect(:sys.get_state(WwwServer.service_name))
 
     {:ok, new_room} = Room.new("new-id", "new name", false)
     WwwServer.add_room(new_room)
+
+    IO.inspect(:sys.get_state(WwwServer.service_name))
 
     # assert Www.hello() == :world
   end
