@@ -9,13 +9,15 @@ Looking to design and develop this fun paper game from my childhood in digital w
 Here is the game, rules, and a sample round of me trying to explain how the game works. This game might exist online already under different names for different cultures. I didn't investigate.
 
 # Rules and Play
-![Rules](rules.png)
+![Rules](readme/rules.png)
 
 # Design
 
 I aim to follow the design principles that are demonstrated and explained brilliantly in this article as much as possible 
 
 https://www.theerlangelist.com/article/spawn_or_not
+
+![Rules](readme/processes.png)
 
 ## Aspirations (intentionally left vague)
 - Hoping for `store nothing` approach
