@@ -13,7 +13,7 @@ defmodule Www.Room do
 
   # TODO: Add guards
 
-  @spec new(binary(), binary(), boolean()) :: {:ok, Room.t}
+  @spec new(binary(), binary(), boolean()) :: {:ok, t}
   def new(id, name, is_private) do
     {:ok, %Room{id: id, name: name, is_private?: is_private, players: []}}
   end
