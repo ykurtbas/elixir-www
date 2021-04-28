@@ -20,7 +20,7 @@ defmodule WwwServer do
   def start_link() do
     GenServer.start_link(
       __MODULE__,
-      %Hall{},
+      Hall.new(),
       name: @service_name
     )
   end

@@ -1,6 +1,5 @@
 defmodule Www.Hall do
   alias __MODULE__
-  alias Www.Room
 
   defstruct [:rooms]
 

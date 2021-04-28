@@ -1,19 +1,18 @@
 defmodule Www.Room do
   alias __MODULE__
-  alias Www.Player
 
   defstruct [:id, :name, :is_private?, :players]
 
   @opaque t :: %Room{
-    id: binary(),
-    name: binary(),
+    id: String.t,
+    name: String.t,
     is_private?: boolean(),
     players: [Player.t]
   }
 
   # TODO: Add guards
 
-  @spec new(binary(), binary(), boolean()) :: {:ok, t}
+  @spec new(String.t, String.t, boolean()) :: {:ok, t}
   def new(id, name, is_private) do
     {:ok, %Room{id: id, name: name, is_private?: is_private, players: []}}
   end
