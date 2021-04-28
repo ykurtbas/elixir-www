@@ -1,4 +1,5 @@
-defmodule Www.Hall do
+defmodule WWW.Hall do
+  alias WWW.Room
   alias __MODULE__
 
   defstruct [:rooms]
@@ -6,8 +7,6 @@ defmodule Www.Hall do
   @opaque t :: %Hall{
     rooms: [Room.t]
   }
-
-  # TODO: Probably change the rooms to a Map? ask community
 
   @spec new :: t
   def new do

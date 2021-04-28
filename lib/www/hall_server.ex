@@ -1,8 +1,6 @@
-defmodule WwwServer do
-  alias Www.Hall
+defmodule WWW.HallServer do
+  alias WWW.Hall
   use GenServer
-
-  @service_name :testing
 
   # Server
   @impl true
@@ -17,22 +15,17 @@ defmodule WwwServer do
   end
 
   # Client
-  def start_link() do
+  def start_link(opts) do
     GenServer.start_link(
       __MODULE__,
       Hall.new(),
-      name: @service_name
+      opts
     )
   end
 
-  @spec service_name :: :testing
-  def service_name do
-    @service_name
-  end
-
   # Api
-  @spec add_room(any) :: :ok
   def add_room(room) do
-    GenServer.call(@service_name, {:add_room, room})
+    GenServer.call(__MODULE__, {:add_room, room})
+    DynamicSupervisor.start_child(WWW.RoomSupervisor, WWW.RoomServer)
   end
 end

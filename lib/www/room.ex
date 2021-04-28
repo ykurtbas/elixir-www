@@ -1,4 +1,4 @@
-defmodule Www.Room do
+defmodule WWW.Room do
   alias __MODULE__
 
   defstruct [:id, :name, :is_private?, :players]

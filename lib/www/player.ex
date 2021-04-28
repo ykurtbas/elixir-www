@@ -1,4 +1,4 @@
-defmodule Www.Player do
+defmodule WWW.Player do
   alias __MODULE__
 
   defstruct [:id, :name]
