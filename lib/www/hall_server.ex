@@ -23,9 +23,19 @@ defmodule WWW.HallServer do
     )
   end
 
+
   # Api
   def add_room(room) do
     GenServer.call(__MODULE__, {:add_room, room})
-    DynamicSupervisor.start_child(WWW.RoomSupervisor, WWW.RoomServer)
+    DynamicSupervisor.start_child(WWW.RoomSupervisor, {WWW.RoomServer, [room: room, name: do_generate_code()]})
+  end
+
+  defp do_generate_code() do
+    # Generate a single 4 character random code
+    range = ?A..?Z
+
+    1..4
+    |> Enum.map(fn _ -> [Enum.random(range)] |> List.to_string() end)
+    |> Enum.join("")
   end
 end
